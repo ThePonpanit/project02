@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project-02</title>
+    <iframe
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/QH2-TGUlwu4?controls=0"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="display: none"
+    ></iframe>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="nyan-cat.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/155e6c8def.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="player" style="display: none"></div>
+    <!-- YouTube player will be inserted here -->
+    <div class="top-section"></div>
+    <div class="main-container">
+      <div class="left-section section">
+        <!-- Left section -->
+      </div>
+      <div class="center-section section" style="margin-top: 160px">
+        <!-- Center section -->
+        <header>
+          <div class="container">
+            <div class="centered-container">
+              <input
+                type="number"
+                id="cat-number"
+                placeholder="Enter number of Nyan Cats"
+                class="input-field"
+              />
+              <button onclick="createCats()" class="button">
+                Generate Nyan-Cat
+              </button>
+            </div>
+
+            <h1>Welcome to My Website!</h1>
+            <div style="margin-bottom: 30px; align-items: center">
+              <a style="font-size: 25px; color: burlywood">Project-02</a>
+            </div>
+            <a
+              id="speaker-icon"
+              onclick="toggleSound()"
+              class="fas fa-volume-up fun-button"
+              style="margin-left: 10px"
+            >
+              <span class="button-text">Play the Nyan Cat song</span>
+            </a>
+          </div>
+        </header>
+        <section>
+          <h2>About Me</h2>
+          <p>
+            Hello! I'm
+            <span class="underline" style="color: #e9950c"
+              >Ponpanit Yakhampor</span
+            >. My student ID is
+            <span class="underline" style="color: #e9950c">600612106</span>.
+          </p>
+          <h2>Did You Know?</h2>
+          <p id="funFact" class="typing-animation"></p>
+        </section>
+        <footer>
+          <p>
+            Thanks for visiting!
+            <a href="https://guthib.com/" target="_blank">
+              <i class="fab fa-github" style="color: #df3079"> </i>
+            </a>
+          </p>
+          <div><a> Hint* ~ Click the Generated Nyan to remove it.</a></div>
+        </footer>
+      </div>
+      <div class="right-section section">
+        <!-- Right section -->
+      </div>
+    </div>
+    <div class="bottom-section">
+      <!-- Content for the bottom section -->
+    </div>
+  </body>
+</html>
