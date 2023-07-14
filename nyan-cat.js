@@ -1,15 +1,15 @@
-// Create a Nyan Cat at the top of the page on page load
-window.addEventListener("load", function () {
+// Create a Nyan Cat
+function createNyanCat(top, width) {
   const nyanCat = document.createElement("img");
   nyanCat.src = "neon-cat-rainbow.gif";
   nyanCat.style.position = "absolute";
   nyanCat.style.left = "-500px";
-  nyanCat.style.top = "10px";
-  nyanCat.style.width = "430px";
-  document.body.appendChild(nyanCat);
+  nyanCat.style.top = top;
+  nyanCat.style.width = width;
 
-  animateNyanCat(nyanCat);
-});
+  document.body.appendChild(nyanCat);
+  return nyanCat;
+}
 
 // Animate the Nyan Cat
 function animateNyanCat(nyanCat) {
@@ -28,6 +28,12 @@ function animateNyanCat(nyanCat) {
   animate();
 }
 
+// On page load, create and animate a Nyan Cat
+window.addEventListener("load", function () {
+  const nyanCat = createNyanCat("10px", "430px");
+  animateNyanCat(nyanCat);
+});
+
 // Create the Nyan cats
 function createCats() {
   const catNumberInput = document.getElementById("cat-number");
@@ -44,30 +50,18 @@ function createCats() {
   for (let i = 0; i < catNumber; i++) {
     setTimeout(() => {
       // Create a new nyan cat
-      const nyanCat = document.createElement("img");
-      nyanCat.src = "neon-cat-rainbow.gif";
-      nyanCat.style.position = "absolute";
-      nyanCat.style.left = "-500px";
-      nyanCat.style.top = `${Math.random() * window.innerHeight}px`; // Randomize the vertical position
-      nyanCat.style.width = "150px"; // Adjust the size as desired
+      const nyanCat = createNyanCat(
+        `${Math.random() * window.innerHeight}px`,
+        "150px"
+      );
 
       // Add event listener to remove the cat when clicked
       nyanCat.addEventListener("click", function () {
         this.remove();
       });
 
-      document.body.appendChild(nyanCat);
-
       // Animate the nyan cat
-      let position = -500;
-      setInterval(() => {
-        position += 5;
-        nyanCat.style.left = `${position}px`;
-
-        if (position > window.innerWidth) {
-          position = -500;
-        }
-      }, 20);
+      animateNyanCat(nyanCat);
     }, i * delay);
   }
 }
